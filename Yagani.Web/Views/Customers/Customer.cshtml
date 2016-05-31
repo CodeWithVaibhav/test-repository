@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Yagani.Web.Models.Customer>
+
+@{
+    ViewBag.Title = "Customer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>
+    @{
+        var name = String.Empty;
+        var customer = Model.FirstOrDefault();
+        if (customer != null)
+        {
+            name = customer.Name;
+        }
+    }
+    @name</h2>

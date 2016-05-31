@@ -1,0 +1,28 @@
+﻿@model List<Yagani.Web.Models.Movie>
+
+@{
+    ViewBag.Title = "Movies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movies</h2>
+
+<br />
+<br />
+
+<table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th>
+            Name
+        </th>
+    </tr>
+    @foreach (var movie in Model)
+    {
+        <tr>
+            <td>
+                @movie.Name
+            </td>
+        </tr>
+    }
+</table>
+

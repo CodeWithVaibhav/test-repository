@@ -1,0 +1,27 @@
+﻿@model List<Yagani.Web.Models.Customer>
+
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+<br />
+<br />
+<table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    @foreach (var customer in Model)
+    {
+        <tr>
+            <td>
+                @customer.Id
+            </td>
+            <td>
+                @Html.ActionLink(@customer.Name, "Customer", "Customers", new { id = customer.Id }, null)
+            </td>
+        </tr>
+    }
+</table>
